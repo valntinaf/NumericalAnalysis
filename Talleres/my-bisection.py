@@ -8,4 +8,4 @@ def bisection(f, a, b, e):
 		c=(a+b)/2
 	print(c)
 
-bisection( lambda x: pow(x,3)+3*x-5,1,2, 0.001)
+bisection( lambda x: pow(x,2)+pow(9,12)*x-3,0,2, 0.001)

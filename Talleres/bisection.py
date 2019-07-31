@@ -1,7 +1,7 @@
 #Función para polinomios
 def poli(x):
       y=pow(x,2)
-      return ( )
+      return ()
 #Programa principal
 print "Este programa encuentra una raíz, por el método de bisección"
 float(raw_input('Introduce el valor de xi'))
