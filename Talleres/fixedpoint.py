@@ -10,4 +10,4 @@ def fixedpoint(x, gx, n):
 		cont+=1
 
 
-fixedpoint(0, lambda x: math.exp(-x), 20)
+fixedpoint(0, lambda x: -(1-pow(x,3))/5, 8)
