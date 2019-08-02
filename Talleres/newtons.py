@@ -7,4 +7,5 @@ def newtons(f, df, xi, e):
 		cont+=1
 		print('x: ',x)
 
-newtons(lambda x: math.exp(x), lambda x: math.exp(x), 0, 8)
+# f1(e^x)=e^x
+newtons(lambda x: pow(x-1.8974,3), lambda x: pow(3*(x-1.8974),2), 0, 9)
