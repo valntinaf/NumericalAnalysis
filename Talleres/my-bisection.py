@@ -6,6 +6,6 @@ def bisection(f, a, b, e):
 		else:
 			a=c
 		c=(a+b)/2
-	print(c)
+		print(c)
 
-bisection( lambda x: pow(x,2)+pow(9,12)*x-3,0,2, 0.001)
+bisection( lambda x: pow(x-1.8974,3),0,2, 0.0000000001)
