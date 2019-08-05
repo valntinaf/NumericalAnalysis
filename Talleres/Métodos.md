@@ -1,0 +1,4 @@
+- Aitken
+- Posición fija
+- Secante
+- Taylor
