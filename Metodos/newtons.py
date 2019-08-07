@@ -1,3 +1,7 @@
+# f: funcion
+# df: derivada de la funcion
+# xi: valor inicial
+# e: error tolerado
 import math
 def newtons(f, df, xi, e):
 	cont=0

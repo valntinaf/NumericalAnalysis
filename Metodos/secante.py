@@ -1,5 +1,9 @@
+# f: funcion
+# xi: valor inicial
+# xj: valor siguiente
+# i: numero de iteraciones
 import math
-def newtons(f, xi, xj, e):
+def newtons(f, xi, xj, i):
 	cont=0
 	while(cont<e):
 		x=xi-f(xi)/((f(xj)-f(xi))/(xj-xi))

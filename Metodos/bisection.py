@@ -1,6 +1,10 @@
+# f: funcion
+# a: inicio del intervalo
+# b: fin del intervalo
+# e: error aceptado
 def bisection(f, a, b, e):
 	c=(a+b)/2
-	while abs(f(c) - 0) > e: 
+	while abs(f(c) - 0) > e:
 		if f(a)*f(c) <0:
 			b=c
 		else:

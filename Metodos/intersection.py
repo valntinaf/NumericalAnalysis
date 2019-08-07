@@ -1,3 +1,8 @@
+# Metodo de biseccion entre dos funciones
+# f: primera funcion
+# g: segunda funcion
+# a, b: intervalo entre el cual se evalua
+# e: error tolerado
 import math
 def intersection( f, g, a, b, e):
 	cont=0
@@ -6,7 +11,7 @@ def intersection( f, g, a, b, e):
 		if(f(c)<g(c)):
 			b=c
 		else:
-			a=c	
+			a=c
 		cont+=1
 		print(c)
 		c=(a+b)/2
