@@ -1,5 +1,6 @@
 # Una forma de factorizar matrices, es la factorización LU, en donde se buscan dos matrices L y U, triangular
 # inferior y superior respectivamente que multiplicadas sean la matriz original.
+
 import numpy as np
 
 def lu(matriz):
