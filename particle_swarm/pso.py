@@ -54,7 +54,6 @@ def pso(equation, n_terms, n_particles, error):
 				w=weights[particle+1][term]
 				actual_terms_list[particle][term]=round(pbest+(2*r6-0.5)*v+(2*r7-0.5)*w,rou)
 			data_for_plot.append(equation(best_group_terms))
-			print(best_group_terms)
 		iteration+=1
 	print("Solución:")
 	print(best_group_terms)
@@ -64,12 +63,12 @@ def pso(equation, n_terms, n_particles, error):
 
 def f(x):
 	try:
-		res = math.exp(x[1])+pow(x[0]+1,2)
+		res = math.exp(x[0]+x[1])-pow(x[0]+x[1],3)
 	except OverflowError:
 		res = float('inf')
 	return res
 
-fx=pso(f, 2, 12, 1e-4)
+fx=pso(f, 3, 12, 1e-4)
 print("Valor hallado: ")
 print(fx)
 
