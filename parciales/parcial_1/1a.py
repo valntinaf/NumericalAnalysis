@@ -1,3 +1,5 @@
+import matplotlib.pyplot as plt
+
 def sumaTriangular(A):
     matrix = list(list(A))
     n = len(matrix)
