@@ -1,0 +1,10 @@
+#curve(p3x,-1,1)
+x <- c(8,12,14,18)
+y <- c(9,18,21,15)
+f <- approxfun(x, y, method = "linear")
+curve(f(x),8,18)
+
+y <- approx(x,y)
+plot(x, y, main = "spline(.) -- 3 methods")
+lines(spline(x, y, n = 10, method = "hyman", xmin = -6, xmax = 6), col = 3)
+lines(spline(x, y, n = 15, method = "fmm", xmin = -6, xmax = 6), col = 4)
