@@ -1,0 +1,8 @@
+¿Qué diferencia hay entre una curva de bezier y un spline cúbico?
+Un spline es un conjunto de curvas de bezier, un spline cúbico
+
+¿En qué situaciones recomienda utilizar curva de Bezier a cambio de splines, Lagrange, Hermite, Newton?
+Cuando la curva no es compleja y puede representarse con un grado menor a 5.
+
+¿Qué papel cumplen los puntos de control?
+  Definen el inicio, el final y la curvatura de la curva, así como el grado.
