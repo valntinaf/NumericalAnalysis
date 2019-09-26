@@ -9,3 +9,5 @@ nodes = np.asfortranarray([
 curve = bezier.Curve(nodes, degree=2)
 ax = curve.plot(num_pts=256)
 plt.show()
+
+#

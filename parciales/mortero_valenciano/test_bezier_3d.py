@@ -11,15 +11,15 @@ def mortero( gauge, height, density ):
 		points = np.asfortranarray([
 			[gauge*z*-1, z, gauge*z],
 			[0, 		 -1*gauge*z, 0]])
-		curve = bezier.Curve( points , degree=4 )
+		curve = bezier.Curve( points , degree=3 )
 		xline = np.linspace(-density, density, density)
 		yline = curve.evaluate_multi(xline)[1]
 		zline = [z for i in range(density)]
 		ax.scatter(xline, yline, zline, zdir='z', s=density)
-		# ax.scatter(xline, yline, zline, zdir='z', s=density)
 
 		print(yline)
 	plt.show()
 
 mortero(8, 10, 50)
 
+#

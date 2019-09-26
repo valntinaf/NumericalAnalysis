@@ -20,3 +20,5 @@ print(ydata)
 ax.scatter3D(xdata, ydata, zdata, c=zdata, cmap='Greens')
 ax.contour3D(X, Y, Z, 50, cmap='binary')
 plt.show()
+
+#
