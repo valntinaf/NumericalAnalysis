@@ -1,0 +1,88 @@
+grid_x, grid_y = np.mgrid[0:1:100j, 0:1:200j]
+
+import reader_wewe as r_wewe
+from scipy.interpolate import barycentric_interpolate, interp1d, lagrange, Akima1DInterpolator, pchip_interpolate, krogh_interpolate, BarycentricInterpolator, UnivariateSpline
+
+import numpy as np
+import matplotlib.pyplot as plt 
+import math
+
+from scipy.interpolate import griddata
+
+all_data_3h = r_wewe.read_data_3h()
+all_data_h = r_wewe.read_data_h()
+temps = []
+
+grid_x, grid_y = np.mgrid[0:1:100j, 0:1:200j]
+
+methods_names = {
+	0: "UnivariateSpline"
+	}
+methods = {
+	"UnivariateSpline": UnivariateSpline
+	}
+
+print("Escriba las variables que desea analizar: ")
+print("Variables: ")
+print("vel umi temp rad press precip windir \n")
+to_analyze = input()
+xs = all_data_3h[to_analyze]
+print(xs)
+
+print("Escriba los datos sobre el entorno")
+while(True):
+	print("Variables: ")
+	print("vel umi temp rad press precip windir \n")
+	print("Escriba el dato sobre el cual desea analizar la variable, 0 para salir: ")
+	var = input()
+	if var == '0':
+		break;
+
+	ys = all_data_3h[var]
+
+	print("Escriba el valor de la variable: ")
+	value = float(input())
+	
+	# Interpolación por el método de Lagrange
+
+	print("Hallando el valor de {}".format(value))
+
+	method_i=0
+
+	interpolated=False
+	while not interpolated and method_i < len(methods):
+		try:
+			# Selecting method
+			method_name = methods_names[method_i]
+			method_i+=1
+			print("Intentando interpolar con {}.".format(method_name)) 
+			method = methods[method_name]
+
+			# Getting function
+			p = method(np.array(xs), np.array(ys))
+			# Getting value y in x point 
+			y = float(p(value))
+	
+			# Checking if it worked
+			if not math.isnan(y):
+				print("Obteniendo valor...")
+				print("Valor actual:")
+				print(y)
+				interpolated=True
+				temps.append(y)
+
+		except: 
+			print("Method couldn't work...")
+
+
+	print(temps)
+	print("Valor promedio:")
+	np.average(temps)
+
+	plt.plot(ys,xs,'x', mew=2, label='Datos')
+
+	# Datos de plot
+	plt.xlabel(var)
+	plt.ylabel(to_analyze)
+	plt.legend()
+	plt.show()
