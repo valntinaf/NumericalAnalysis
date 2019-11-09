@@ -11,3 +11,15 @@ plotly
 y pueden ser instalados con pip, ejemplo:
 
 $ pip install pandas
+
+Después de tener los módulos instalados, ejecute cualquier aplicación:
+
+Para el modelo SI:
+
+$ python graph.py
+
+Para el modelo SIR:
+
+$ python graph_sir.py
+
+Al ejecutar dash, la aplicación se lanzará por defecto en localhost, en el puerto 8050 como se muestra en la consola de ejecución, para acceder a ella, asegurese de que el firewall no esté bloqueando la conexión.
