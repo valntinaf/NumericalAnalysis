@@ -1,0 +1,13 @@
+MANUAL DE INSTALLACIÓN DE LOS PROGRAMAS EN PYTHON
+
+Para la ejecución de este programa se usó Python 3.7 con la versión X de Dash
+
+Los modulos necesarios para el desarrollo fueron:
+dash
+networkx
+pandas
+plotly
+
+y pueden ser instalados con pip, ejemplo:
+
+$ pip install pandas
